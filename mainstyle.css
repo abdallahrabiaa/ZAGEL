@@ -1,0 +1,139 @@
+@font-face {
+  font-family: oswald;
+  src: url(/fonts/Oswald-VariableFont_wght.ttf); }
+:root {
+  font-size: 16px;
+  font-family: "oswald";
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  box-sizing: border-box; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+@keyframes moveleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%); }
+  70% {
+    opacity: 0.6;
+    transform: translateX(20%); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+@keyframes moveright {
+  0% {
+    opacity: 0;
+    transform: translateX(100%); }
+  70% {
+    opacity: .6;
+    transform: translateX(-20%); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+@keyframes movetop {
+  0% {
+    opacity: 0;
+    transform: translateY(6rem); }
+  100% {
+    transform: translate(0); } }
+header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 100, 131, 0.8)), url(../images/small.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 66%, 0 100%);
+  position: relative;
+  background-attachment: fixed;
+  background-clip: border-box; }
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  color: white; }
+
+.titleBox {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-40%, -40%);
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase; }
+
+.mainTitle {
+  display: block;
+  font-weight: 400;
+  font-size: 3rem;
+  letter-spacing: 2.3rem;
+  animation-name: moveleft;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  backface-visibility: hidden;
+  animation-fill-mode: backwards; }
+
+.subTitle {
+  display: block;
+  font-size: 1.5rem;
+  letter-spacing: 1.8rem;
+  animation-name: moveright;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  margin-bottom: 4rem;
+  backface-visibility: hidden;
+  animation-fill-mode: backwards; }
+
+.button:link, .button:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 2.3rem;
+  border-radius: 5.3rem;
+  display: inline-block;
+  transition: all .2s;
+  position: relative; }
+
+.button-white {
+  background-color: white;
+  color: #7ed56f; }
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.7rem 1.4rem rgba(0, 0, 0, 0.2); }
+
+.button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3.5rem 7rem rgba(0, 0, 0, 0.2); }
+
+.button::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-radius: 7rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s; }
+
+.button-white::after {
+  background-color: white; }
+
+.button:hover::after {
+  transform: scaleX(1.5) scaleY(1.6);
+  opacity: 0; }
+
+.button-white {
+  animation-name: movetop;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: .75s;
+  animation-fill-mode: backwards; }
+
+/*# sourceMappingURL=mainstyle.css.map */
